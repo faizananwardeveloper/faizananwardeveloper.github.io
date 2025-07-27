@@ -355,6 +355,22 @@
             justify-content: center;
             position: relative;
             z-index: 1;
+
+            @media (max-width: 700px) {
+                flex: 0 0 auto; /* Change from flex:1 to prevent unwanted growing */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                z-index: 1;
+
+                min-width: 0; /* Allow shrinking */
+                max-width: 350px; /* Maximum size */
+                width: 350px;
+                height: 350px;
+                /*margin: 0 auto;*/
+                margin-top: 300px;
+            }
         }
 
         .hero-image img {
@@ -363,6 +379,17 @@
             border-radius: var(--border-radius-xl);
             box-shadow: var(--shadow-xl);
             animation: float 6s ease-in-out infinite;
+
+            @media (max-width: 700px){
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center;
+                border: 5px solid var(--primary-light);
+                box-shadow: var(--shadow-xl);
+                animation: float 6s ease-in-out infinite;
+            }
         }
 
         @keyframes float {
@@ -1372,6 +1399,9 @@
 <section id="hero">
     <div class="container">
         <div class="hero-content">
+            <div class="hero-image">
+                <img src="Muhammad%20Faizan%20Anwar.JPG" alt="Muhammad Faizan Anwar">
+            </div>
             <div class="hero-text">
                 <h1 id="engineerName">Hi, I'm <span>Muhammad Faizan Anwar</span></h1>
                 <h2 id="engineerTitle">Senior Software Engineer</h2>
@@ -1386,9 +1416,6 @@
                     <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-medium-m"></i></a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="Muhammad%20Faizan%20Anwar.JPG" alt="Muhammad Faizan Anwar">
             </div>
         </div>
     </div>
