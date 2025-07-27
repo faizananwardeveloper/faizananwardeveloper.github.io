@@ -1139,6 +1139,30 @@
                     }
                 }
             }
+
+            #projectModal {
+                #modalProjectTitle {
+                    font-size: 25px;
+                }
+
+                .tech-tags {
+                    .tech-tag {
+                        font-size: 12px;
+                    }
+                }
+
+                .modal-body h3 {
+                    font-size: 20px;
+                }
+
+                #modalProjectDescription {
+                    font-size: 14px;
+                }
+
+                #modalProjectResponsibilities li {
+                    font-size: 14px;
+                }
+            }
         }
 
         /* Modal Styles */
@@ -1189,6 +1213,7 @@
             color: var(--gray);
             cursor: pointer;
             transition: var(--transition);
+            z-index: 9999;
         }
 
         .close-modal:hover {
@@ -1801,7 +1826,7 @@
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <div class="modal-header">
-            <img id="modalProjectImage" src="" alt="Project Image">
+<!--            <img id="modalProjectImage" src="" alt="Project Image">-->
             <h2 id="modalProjectTitle"></h2>
         </div>
         <div class="modal-body">
@@ -1977,21 +2002,21 @@
     // });
 
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //     anchor.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //
+    //         const targetId = this.getAttribute('href');
+    //         const targetElement = document.querySelector(targetId);
+    //
+    //         if (targetElement) {
+    //             window.scrollTo({
+    //                 top: targetElement.offsetTop - 80,
+    //                 behavior: 'smooth'
+    //             });
+    //         }
+    //     });
+    // });
 
     // Project Details Modal Functionality
     const projectsData = [
@@ -2332,7 +2357,7 @@
 
             projectCard.innerHTML = `
                 <div class="project-image">
-                    <img src="${project.image}" alt="${project.title}">
+                    <img src="./project.jpg" alt="${project.title}">
                     <div class="project-overlay">
                         <div class="project-links">
                             <a href="${project.url}" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
@@ -2391,8 +2416,8 @@
     function showProjectDetails(project) {
         const modal = document.getElementById('projectModal');
 
-        document.getElementById('modalProjectImage').src = project.image;
-        document.getElementById('modalProjectImage').alt = project.title;
+        // document.getElementById('modalProjectImage').src = './project.jpg';
+        // document.getElementById('modalProjectImage').alt = project.title;
         document.getElementById('modalProjectTitle').textContent = project.title;
         document.getElementById('modalProjectDescription').textContent = project.description;
 
@@ -2425,6 +2450,7 @@
 
     // Close modal
     document.querySelector('.close-modal').addEventListener('click', () => {
+        console.log('close-modal   reached');
         document.getElementById('projectModal').style.display = "none";
         document.body.style.overflow = "auto";
     });
