@@ -1047,7 +1047,7 @@
 
         .project-meta {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
             gap: 20px;
             margin-bottom: 30px;
             padding-bottom: 20px;
@@ -1058,6 +1058,14 @@
             display: flex;
             align-items: center;
             gap: 10px;
+
+            .tech-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                align-items: center;
+                overflow: hidden;
+            }
         }
 
         .meta-item i {
@@ -1123,6 +1131,73 @@
             .project-meta {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .experience-section {
+            margin-top: 50px;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .experience-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .experience-location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .experience-description {
+            margin-top: 15px;
+        }
+
+        .experience-responsibilities {
+            margin-top: 20px;
+        }
+
+        .responsibility-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .responsibility-item::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
         }
     </style>
 </head>
@@ -1195,9 +1270,9 @@
             <p>Get to know me better - my journey, skills, and passion for technology</p>
         </div>
         <div class="about-content">
-            <div class="about-image">
-                <img src="Muhammad%20Faizan%20Anwar.JPG" alt="About Muhammad Faizan Anwar">
-            </div>
+<!--            <div class="about-image">-->
+<!--                <img src="Muhammad%20Faizan%20Anwar.JPG" alt="About Muhammad Faizan Anwar">-->
+<!--            </div>-->
             <div class="about-text">
                 <h3>Who am I?</h3>
                 <p>
@@ -1211,16 +1286,15 @@
                     efficiency and drive growth.
                 </p>
                 <p>
-                    He is known for writing robust, maintainable code at speed, and for architecting solutions
+                    I'm known for writing robust, maintainable code at speed, and for architecting solutions
                     tailored to high-traffic, high-volume business environments. With over 6 years of experience
-                    leading and mentoring development teams, Muhammad Faizan combines technical
-                    leadership with strategic thinking and a commitment to innovation. His strong
-                    communication skills and collaborative mindset have enabled him to drive projects from
-                    conception to deployment effectively.
+                    leading and mentoring development teams, I combine technical leadership with strategic
+                    thinking and a commitment to innovation. My strong communication skills and collaborative
+                    mindset have enabled me to drive projects from conception to deployment effectively.
                 </p>
                 <p>
-                    Muhammad Faizan’s mission is to create customized software solutions that improve
-                    operational efficiency, align with business goals, and support long-term growth.
+                    My mission is to create customized software solutions that improve operational efficiency,
+                    align with business goals, and support long-term growth.
                 </p>
                 <div class="skills-list">
                     <span class="skill-tag">Ruby on Rails</span>
@@ -1233,10 +1307,74 @@
                     <span class="skill-tag">Docker</span>
                     <span class="skill-tag">K8s</span>
                 </div>
+
+                <!-- Professional Experience Section -->
+                <div class="experience-section">
+                    <h3>Professional Experience</h3>
+
+                    <!-- Invozone Ltd -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h4 class="experience-title">Senior Software Engineer</h4>
+                                <div class="experience-company">Invozone Pvt Ltd</div>
+                            </div>
+                            <div class="experience-date">December 2021 - Present</div>
+                        </div>
+                        <div class="experience-location">Lahore | Remote</div>
+                        <div class="experience-responsibilities">
+                            <div class="responsibility-item">Led the development and maintenance of Ruby on Rails, Elixir/Phoenix, React.js and Angular applications, contributing to scalable and high-performance systems.</div>
+                            <div class="responsibility-item">Designed and implemented complex architectural solutions for web applications, ensuring robust functionality and optimization.</div>
+                            <div class="responsibility-item">Developed CI/CD pipelines for Rails, Angular, and React.js projects, improving deployment efficiency.</div>
+                            <div class="responsibility-item">Optimized application's performance and worked as a full-stack software engineer.</div>
+                            <div class="responsibility-item">Solved complex problems and mentored junior developers, conducted code reviews, and led the team to implement new features rapidly while maintaining code quality.</div>
+                            <div class="responsibility-item">Managed the implementation of server-side rendering (SSR) in Angular applications to boost SEO.</div>
+                            <div class="responsibility-item">Developed scalable solutions and collaborated with teams to define user requirements.</div>
+                            <div class="responsibility-item">Managed relational database and played a key role in project leadership and design for in-house products.</div>
+                        </div>
+                    </div>
+
+                    <!-- Software Alliance -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h4 class="experience-title">Software Engineer</h4>
+                                <div class="experience-company">Software Alliance</div>
+                            </div>
+                            <div class="experience-date">February 2021 - December 2021</div>
+                        </div>
+                        <div class="experience-location">Lahore | Onsite</div>
+                        <div class="experience-responsibilities">
+                            <div class="responsibility-item">Worked on microservices-based architectures, developing web applications with Ruby on Rails and React.js.</div>
+                            <div class="responsibility-item">Deployed applications on AWS and managed Docker containers, ensuring smooth deployments and scalability.</div>
+                            <div class="responsibility-item">Led development teams, implementing new features and maintaining high-quality standards.</div>
+                            <div class="responsibility-item">Trained junior engineers, performed code reviews, and optimized code for performance and scalability.</div>
+                        </div>
+                    </div>
+
+                    <!-- Tiksom Private Limited -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h4 class="experience-title">Software Engineer</h4>
+                                <div class="experience-company">Tiksom Private Limited</div>
+                            </div>
+                            <div class="experience-date">June 2019 - February 2021</div>
+                        </div>
+                        <div class="experience-location">Lahore | Onsite</div>
+                        <div class="experience-responsibilities">
+                            <div class="responsibility-item">Developed and maintained over 10 Ruby on Rails applications, including single-page apps using React.js.</div>
+                            <div class="responsibility-item">Implemented test-driven development (TDD) to ensure robust code quality and reliability.</div>
+                            <div class="responsibility-item">Deployed applications to Heroku and AWS, managing infrastructure and ensuring availability.</div>
+                            <div class="responsibility-item">Collaborated with cross-functional teams to deliver high-performance, user-centric applications.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Skills Section -->
 <section id="skills">
@@ -1511,10 +1649,6 @@
             <h3>Project Overview</h3>
             <p id="modalProjectDescription"></p>
             <div class="project-features">
-                <h3>Key Features</h3>
-                <ul id="modalProjectFeatures"></ul>
-            </div>
-            <div class="project-responsibilities">
                 <h3>My Contributions</h3>
                 <ul id="modalProjectResponsibilities"></ul>
             </div>
@@ -2107,7 +2241,7 @@
         document.getElementById('modalProjectLink').href = project.url;
 
         // Set project features/responsibilities
-        const featuresContainer = document.getElementById('modalProjectFeatures');
+        const featuresContainer = document.getElementById('modalProjectResponsibilities');
         featuresContainer.innerHTML = '';
         project.responsibilities.forEach(item => {
             const li = document.createElement('li');
